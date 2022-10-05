@@ -1,1 +1,3 @@
-console.log('MangaLivre module')
+exports.mangalivre = () => {
+  console.log('MangaLivre module');
+};
