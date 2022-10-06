@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js https://www.mangalivre.net my-cookie "
+    "test": "node index.js https://mangalivre.net/ler/tokyo-ghoul/online/54425/100#/!page0 tokyo-ghoul"
   },
   "author": "",
   "license": "ISC",

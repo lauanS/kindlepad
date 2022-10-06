@@ -7,6 +7,7 @@ const { zipFolder } = require('../../utils/zip');
 
 exports.mangalivre = async (props) => {
   console.log('MangaLivre module');
+  console.log(props);
 
   const { url, name } = props;
 
@@ -62,7 +63,14 @@ const downloadChapterImg = async (page, pageIndex, name) => {
 
   // OBTER IMAGENS
   console.log('Avaliando:');
-  let pageImgUrl = pageHtml.match(getPageImgRegex)[1];
+  const match = pageHtml.match(getPageImgRegex);
+
+  if (!match) {
+    console.log('Erro: Não foi possível encontrar a imagem do capítulo');
+    return;
+  }
+
+  let pageImgUrl = match[1];
 
   console.log(pageImgUrl);
 
