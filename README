@@ -1,0 +1,7 @@
+Projeto Realizado para o Hackoon Space - UFSCar Sorocaba por Lauan S. S. e M. Anita M.
+Esse projeto consiste em a partir de um site de mídia digital como mangás,  HQs e livros, extrair o conteúdo da página de disponibizá-lo offline para o usuário.
+Atualmente o Kindlepad está com o módulo referente ao site do M4ng4 L1vr3 implementado, no qual é capaz de baixar um capítulo de um mangá e convertêlo para o formato .cbr
+
+Modo de uso:
+
+
