@@ -10,6 +10,7 @@ exports.mangalivre = async (props) => {
 
   const { url, name } = props;
 
+  //getChapaterList(url);
   if (!url || !name) {
     console.log('Erro: Informe a url do capítulo e o nome');
     return;
@@ -24,6 +25,13 @@ exports.mangalivre = async (props) => {
 
   console.log(`Completo - arquivo disponível em: generated/mangalivre/cbr/${name}`);
 };
+
+// const getChapaterList(url)=> {
+//   const pageHtml = await page.content();
+//   const regex = /"(\/ler\/[a-z-/0-9]*)"/;
+
+//   return pageHtml.matchAll(regex);
+// }
 
 const downloadChapter = async (url, browser, name) => {
   // IMAGEM
