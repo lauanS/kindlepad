@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js https://mangalivre.net/ler/spy-x-family/online/181673/3#/!page0 spy-x-family"
+    "test": "node index.js https://mangalivre.net/manga/spy-x-family-colorida/13348 spy-x-family"
   },
   "author": "",
   "license": "ISC",

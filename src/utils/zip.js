@@ -23,4 +23,4 @@ exports.zipFolder = (sourceDir, outputPath) => {
     stream.on('close', () => resolve());
     archive.finalize();
   });
-}
+};

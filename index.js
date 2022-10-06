@@ -15,4 +15,8 @@ const params = args.slice(1);
 const rawdata = fs.readFileSync('./module-list.json');
 const moduleList = JSON.parse(rawdata);
 
+if (!fs.existsSync('generated/')) {
+  fs.mkdirSync('generated/');
+}
+
 kindlepad(website, params, moduleList);
