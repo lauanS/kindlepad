@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { kindlepad } = require('./src/main');
+const { makedir } = require('./src/utils');
 
 // Entrada
 const args = process.argv.slice(2);
@@ -15,8 +16,6 @@ const params = args.slice(1);
 const rawdata = fs.readFileSync('./module-list.json');
 const moduleList = JSON.parse(rawdata);
 
-if (!fs.existsSync('generated/')) {
-  fs.mkdirSync('generated/');
-}
+makedir('generated/');
 
 kindlepad(website, params, moduleList);

@@ -24,3 +24,28 @@ exports.zipFolder = (sourceDir, outputPath) => {
     archive.finalize();
   });
 };
+
+/**
+ * Cria o diretório caso não exista
+ * @param {String} dir: Caminho do diretório
+ */
+exports.makedir = (dir) => {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
+};
+
+/**
+ * Obtem o HTML da página
+ * @param {Puppeteer.Page} page: Página do puppeteer
+ * @returns {String} HTML da página
+ */
+exports.getPageHTML = async (page) => {
+  let pageHtml = await page.content();
+
+  pageHtml = pageHtml.replace(/(?:\r\n|\r|\n)/g, ' ');
+  pageHtml = pageHtml.replace(/( ){2,}/g, ' ');
+
+  return pageHtml;
+};
+

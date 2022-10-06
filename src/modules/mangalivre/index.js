@@ -3,15 +3,13 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 const { getPageImgRegex } = require('./regex');
-const { zipFolder } = require('../../utils/zip');
+const { zipFolder, makedir, getPageHTML } = require('../../utils');
 
 exports.mangalivre = async (props) => {
   console.log('MangaLivre module');
   console.log(props);
 
-  if (!fs.existsSync('generated/mangalivre')) {
-    fs.mkdirSync('generated/mangalivre');
-  }
+  makedir('generated/mangalivre');
 
   const { url, name } = props;
 
@@ -66,10 +64,7 @@ const getChapterList = async (mangaUrl, browser) => {
 const downloadManga = async (mangaUrl, browser, name) => {
   const chapterUrlList = await getChapterList(mangaUrl, browser);
 
-  console.log(chapterUrlList);
-  if (!fs.existsSync(`generated/mangalivre/${name}`)) {
-    fs.mkdirSync(`generated/mangalivre/${name}`);
-  }
+  makedir(`generated/mangalivre/${name}`);
 
   for (let chapterIndex = 0; chapterIndex < chapterUrlList.length; chapterIndex++) {
     const chapterUrl = chapterUrlList[chapterIndex];
@@ -123,9 +118,7 @@ const downloadChapterImg = async (page, pageIndex, name, chapterIndex) => {
 const downloadChapterImgMin = async (pageImgUrl, pageImgIndex, name, chapterIndex) => {
   const pageImg = await axios({ method: 'get', url: pageImgUrl, responseType: 'stream' });
 
-  if (!fs.existsSync(`generated/mangalivre/${name}/img-${chapterIndex}`)) {
-    fs.mkdirSync(`generated/mangalivre/${name}/img-${chapterIndex}`);
-  }
+  makedir(`generated/mangalivre/${name}/img-${chapterIndex}`);
 
   return pageImg.data.pipe(fs.createWriteStream(`generated/mangalivre/${name}/img-${chapterIndex}/${name}-${('000' + pageImgIndex).slice(-3)}.jpeg`));
 };
@@ -139,19 +132,8 @@ const getLastPageNumber = async (page) => {
 
 const generatedCBR = async (name, chapters) => {
   for (let chapterIndex = 0; chapterIndex < chapters; chapterIndex++) {
-    if (!fs.existsSync(`generated/mangalivre/${name}/cbr-${chapterIndex}`)) {
-      fs.mkdirSync(`generated/mangalivre/${name}/cbr-${chapterIndex}`);
-    }
+    makedir(`generated/mangalivre/${name}/cbr-${chapterIndex}`);
 
     await zipFolder(`generated/mangalivre/${name}/img-${chapterIndex}`, `generated/mangalivre/${name}/cbr-${chapterIndex}/${name}.cbr`);
   }
-};
-
-const getPageHTML = async (page) => {
-  let pageHtml = await page.content();
-
-  pageHtml = pageHtml.replace(/(?:\r\n|\r|\n)/g, ' ');
-  pageHtml = pageHtml.replace(/( ){2,}/g, ' ');
-
-  return pageHtml;
 };
