@@ -1,87 +1,76 @@
-# Extração e Concatenação de Mangás do MangaLivre.net para Leitura Offline
-
-## Conceito do projeto
-
+Extração e Concatenação de Mangás do MangaLivre.net para Leitura Offline
+Conceito do projeto
 Este projeto tem como objetivo permitir que os leitores acessem e leiam mangás (histórias em quadrinhos estilo oriental) do site MangaLivre.net de forma offline. O MangaLivre.net é uma plataforma online que oferece mangás com anúncios aos leitores. A proposta é extrair as imagens dos mangás, baixá-las e reuní-las em um único arquivo, facilitando a leitura em aplicativos dedicados à leitura de quadrinhos mesmo sem conexão com a internet.
 
-### Funcionamento:
+Funcionamento:
 O projeto consiste em um sistema que realiza as seguintes etapas:
-* Acesso ao mangalivre.net: O sistema acessa o site MangaLivre.net para obter os mangás disponíveis para leitura online.
-* Extração de imagens: A partir dos mangás selecionados, o sistema extrai as imagens dos capítulos, garantindo que todo o conteúdo visual seja capturado com fidelidade.
-* Download das imagens: Após a extração, as imagens são baixadas para o computador do usuário, tornando-as acessíveis mesmo em ambientes sem conexão à internet.
-* Concatenação em um único arquivo: Todas as imagens baixadas são agrupadas em um único arquivo, seguindo a ordem original do mangá. Dessa forma, o usuário pode ler o mangá de forma contínua, sem interrupções.
-### Benefícios:
+
+Acesso ao mangalivre.net: O sistema acessa o site MangaLivre.net para obter os mangás disponíveis para leitura online.
+Extração de imagens: A partir dos mangás selecionados, o sistema extrai as imagens dos capítulos, garantindo que todo o conteúdo visual seja capturado com fidelidade.
+Download das imagens: Após a extração, as imagens são baixadas para o computador do usuário, tornando-as acessíveis mesmo em ambientes sem conexão à internet.
+Concatenação em um único arquivo: Todas as imagens baixadas são agrupadas em um único arquivo, seguindo a ordem original do mangá. Dessa forma, o usuário pode ler o mangá de forma contínua, sem interrupções.
+Benefícios:
 Este projeto traz diversos benefícios para os entusiastas de mangás:
-* Leitura offline: Permite a leitura de mangás mesmo em locais sem acesso à internet, tornando-se uma solução ideal para viagens ou locais remotos.
-* Organização: Os mangás são concatenados em um único arquivo, facilitando a organização e evitando a necessidade de lidar com múltiplos arquivos para cada capítulo.
-* Acessibilidade: Usuários que não possuem conexão à internet podem desfrutar de seus mangás favoritos sem restrições.
-* Economia de dados: Uma vez que o mangá é baixado, não é mais necessário utilizar dados móveis ou conexão Wi-Fi para a leitura.
-### Conclusão:
+
+Leitura offline: Permite a leitura de mangás mesmo em locais sem acesso à internet, tornando-se uma solução ideal para viagens ou locais remotos.
+Organização: Os mangás são concatenados em um único arquivo, facilitando a organização e evitando a necessidade de lidar com múltiplos arquivos para cada capítulo.
+Acessibilidade: Usuários que não possuem conexão à internet podem desfrutar de seus mangás favoritos sem restrições.
+Economia de dados: Uma vez que o mangá é baixado, não é mais necessário utilizar dados móveis ou conexão Wi-Fi para a leitura.
+Conclusão:
 Em suma, esse projeto é uma solução prática e útil para leitores de mangás que buscam maior flexibilidade e comodidade em sua experiência de leitura.
 
-  
-## Pré-requisitos e recursos utilizados
-
+Pré-requisitos e recursos utilizados
 Para o desenvolvimento do projeto foi utilzado NodeJs com as seguintes bibliotecas:
 
-* puppeeteer: Foi utilizado para conectar com um browser chromium e simular a interação do usuário com o browser
-* axios: Foi utilizado para o  fazer requisições http para o browser
-* archiver: Foi utilizado para concatenas as várias imagens de um mangá em um único arquivo compactado
-* fs: Foi utilizado para manejar os arquivos dentro o sistema de diretórios do usuário
-
+puppeeteer: Foi utilizado para conectar com um browser chromium e simular a interação do usuário com o browser
+axios: Foi utilizado para o fazer requisições http para o browser
+archiver: Foi utilizado para concatenas as várias imagens de um mangá em um único arquivo compactado
+fs: Foi utilizado para manejar os arquivos dentro o sistema de diretórios do usuário
 Também foi utilizado Regex para acesso a imagens tags e links dentro do site
 
-  
-## Passo a passo
+Passo a passo
 Passos que o grupo realizou para criar, implementar ou projetar o projeto. É importante descrever pelo menos o mais importante para que outras pessoas compreendam como o grupo conseguiu realizar o projeto, quais as atividades feitas, etc, e possam ter meios compreender como reproduzir o projeto, se assim fosse necessário.
 
 Se possível, é legal citar o nome dos arquivos implementados, se forem poucos. Por exemplo, se o seu projeto tiver 4 arquivos, cada um com uma função, citar o nome deles na parte do passo a passo correspondente. Se forem muitos arquivos para uma mesma coisa, não tem problema, podem deixar sem ou deixar apenas o nome da pasta.
 
-### Exemplo:
-
-1. Baixamos o material disponível em [Material](https://materialdeexemplodohackerspace.com.br)
-2. Estudamos como o código do material anterior funciona
-3. Implementamos um programa que se comunicasse com o código compreendido (comunicacao.c e comunicacao.h)
-4. Implementamos uma interface gráfica para utilizar o programa de comunicação de forma mais intuitiva.
-
-## Instalação
+Exemplo:
+Baixamos o material disponível em Material
+Estudamos como o código do material anterior funciona
+Implementamos um programa que se comunicasse com o código compreendido (comunicacao.c e comunicacao.h)
+Implementamos uma interface gráfica para utilizar o programa de comunicação de forma mais intuitiva.
+Instalação
 Passos necessários para instalar ou recriar seu projeto, se assim for necessário. A descrição dos passos não precisa ser complexa. É necessário apenas o mais importante para que outras pessoas saibam como fazê-lo.
 
-### Exemplos:
+Exemplos:
 a)
-  ```
-  Execute o comando X Y Z, no terminal, na pasta do projeto
-  ```
-b)
-  1. Abra a pasta 
-  2. Execute o comando A B C no terminal
-  3. Compile os arquivos X, Y e Z juntos
-  4. Crie um arquivo W.txt de entrada
 
-## Execução
+Execute o comando X Y Z, no terminal, na pasta do projeto
+b)
+
+Abra a pasta
+Execute o comando A B C no terminal
+Compile os arquivos X, Y e Z juntos
+Crie um arquivo W.txt de entrada
+Execução
 Passos necessários para executar, rodar ou testar seu projeto. Vocês podem seguir o mesmo modelo dos exemplos de Instalação.
 
-## Bugs/problemas conhecidos
+Bugs/problemas conhecidos
 Lista de possíveis problemas, bugs, falhas ou comportamentos esquisitos que o grupo conheça sobre o projeto. Esta seção é importante para que outras pessoas saibam quais tipos de erros elas podem encontrar. Seria legal citar motivos que o grupo acredita que sejam os causadores destas coisas, mas não é obrigatório.
 
 O projeto possui uma limitação de que alguns mangás do site, não possuem mesma padronização de nome, e portanto, o regex implementado para obter as imagens e links do sites, pode não funcionar para determinado título, além disso, caso haja alguma atualização no site mangalivre, é possível que o projeto para de funcionar pois não está configurado para essa novas configurações do site.
 
-### Exemplo:
+Exemplo:
+Autores
+Lauan dos Santos Souza (lauanS) Maria Anita de Moura (A-nita)
 
+Demais anotações e referências (opcional)
+Aqui, o grupo pode colocar quaisquer outras informações que ache relevante, se assim desejar. Links de referências e materiais de estudo utilizados ou recomendados são sempre bem vindos.
 
-## Autores
-Lauan dos Santos Souza ([lauanS](https://github.com/lauanS))
-Maria Anita de Moura ([A-nita](https://github.com/A-nita))
-
-
-## Demais anotações e referências (opcional)
-Aqui, o grupo pode colocar quaisquer outras informações que ache relevante, se assim desejar. Links de referências e materiais de estudo utilizados ou recomendados são sempre bem vindos. 
-
-## Imagens/screenshots
+Imagens/screenshots
 É necessário colocar pelo menos 3 imagens/screenshots do projeto, porém fiquem a vontade para colocar mais, a medida do que vocês acharem legal para ilustrar o projeto.
 
 Para colocar imagens no Readme do Github, vocês podem usar o seguinte comando (abrir este Readme no modo raw ou como txt):
 
-![Imagem](https://github.com/hackoonspace/Hackoonspace-template/blob/master/exemplo.png)
+Imagem
 
 É preferível que vocês usem imagens hospedadas no próprio GitHub do projeto. É só referenciar o link delas no comando acima.
