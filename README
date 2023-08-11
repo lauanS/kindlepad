@@ -95,13 +95,13 @@ Para rodar o projeto, basta executar o comando:
 npm run test
 ```
 
-![kindlepad-execution](./images/kindlepad-execution.png)
+![kindlepad-execution](https://github.com/lauanS/kindlepad/blob/main/images/kindlepad-execution.png)
 
 Esse comando irá executar o módulo do Mangalivre.net para baixar um manga.
 
 Ele ficará disponível em `generated/mangalivre/spy-family`
 
-![kindlepad-manga](./images/kindlepad-manga.png)
+![kindlepad-manga](https://github.com/lauanS/kindlepad/blob/main/images/kindlepad-manga.png)
 
 ## Possíveis complicações no Linux
 
@@ -113,7 +113,7 @@ Para o browser ser executado corretamente, ele depende de algumas bibliotecas no
 
 Se ao tentar executar o projeto você se deparar com um erro semelhante ao exemplificado na imagem, será preciso realizar a instalação dessas bibliotecas.
 
-![chrome-install](./images/chrome-install.png)
+![chrome-install](https://github.com/lauanS/kindlepad/blob/main/images/chrome-install.png)
 
 As bibliotecas necessárias podem ser consultadas ao executar o seguinte comando na pasta de instalação do navegador (por padrão é instalado em uma pasta em `~/.cache/puppeteer/*`, destacamos em vermelho na imagem acima o local onde aparece o caminho completo)
 
@@ -121,7 +121,7 @@ As bibliotecas necessárias podem ser consultadas ao executar o seguinte comando
 ldd chrome | grep not
 ```
 
-![chrome-libs-not-found](./images/chrome-libs-not-found.png)
+![chrome-libs-not-found](https://github.com/lauanS/kindlepad/blob/main/images/chrome-libs-not-found.png)
 
 Para instalar esses pacotes, execute
 ```
