@@ -18,7 +18,7 @@ exports.mangalivre = async (props) => {
     return;
   }
 
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: 'new' });
 
   const chapters = await downloadManga(url, browser, name);
 
