@@ -75,21 +75,62 @@ Dessa forma foram implementado o arquivo index.js na pasta src/modules/mangalivr
 
 
 ## Instalação
-Passos necessários para instalar ou recriar seu projeto, se assim for necessário. A descrição dos passos não precisa ser complexa. É necessário apenas o mais importante para que outras pessoas saibam como fazê-lo.
 
-### Exemplos:
-a)
+Para rodar o projeto, é necessário:
+
+- Instalar o [Node.js](https://nodejs.org/en/download) (versão v14 ou superior) e o npm/yarn
+  - O npm vem instalado por padrão junto com o Node.js
+- Realizar o clone do repositório
+- Instalar as dependências do projeto
   ```
-  Execute o comando X Y Z, no terminal, na pasta do projeto
+  npm i
   ```
-b)
-  1. Abra a pasta 
-  2. Execute o comando A B C no terminal
-  3. Compile os arquivos X, Y e Z juntos
-  4. Crie um arquivo W.txt de entrada
+
+Com isso o projeto estará instaldo e pronto para ser executado.
 
 ## Execução
-Passos necessários para executar, rodar ou testar seu projeto. Vocês podem seguir o mesmo modelo dos exemplos de Instalação.
+
+Para rodar o projeto, basta executar o comando:
+```
+npm run test
+```
+
+![kindlepad-execution](./images/kindlepad-execution.png)
+
+Esse comando irá executar o módulo do Mangalivre.net para baixar um manga.
+
+Ele ficará disponível em `generated/mangalivre/spy-family`
+
+![kindlepad-manga](./images/kindlepad-manga.png)
+
+## Possíveis complicações no Linux
+
+### [Bibliotecas para executar o chromium não encontradas](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#chrome-doesnt-launch-on-linux)
+
+O módulo disponível nesse projeto (Mangalivre.net) utiliza a biblioteca puppeteer para instanciar um browser (Chromium) e assim conseguir baixar o manga.
+
+Para o browser ser executado corretamente, ele depende de algumas bibliotecas no seu sistema.
+
+Se ao tentar executar o projeto você se deparar com um erro semelhante ao exemplificado na imagem, será preciso realizar a instalação dessas bibliotecas.
+
+![chrome-install](./images/chrome-install.png)
+
+As bibliotecas necessárias podem ser consultadas ao executar o seguinte comando na pasta de instalação do navegador (por padrão é instalado em uma pasta em `~/.cache/puppeteer/*`, destacamos em vermelho na imagem acima o local onde aparece o caminho completo)
+
+```
+ldd chrome | grep not
+```
+
+![chrome-libs-not-found](./images/chrome-libs-not-found.png)
+
+Para instalar esses pacotes, execute
+```
+sudo apt update -y
+sudo apt install ${BIBLIOTECAS_QUE_ESTÃO_FALTANDO} -y
+```
+
+Uma [lista completa das dependências](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#chrome-doesnt-launch-on-linux) também podem ser consultado na documentação do puppeteer
+
 
 ## Bugs/problemas conhecidos
 O projeto possui uma limitação de que alguns mangás do site, não possuem mesma padronização de nome, e portanto, o regex implementado para obter as imagens e links do sites, pode não funcionar para determinado título, além disso, caso haja alguma atualização no site mangalivre, é possível que o projeto para de funcionar pois não está configurado para essa novas configurações do site.
@@ -103,6 +144,6 @@ Maria Anita de Moura ([A-nita](https://github.com/A-nita))
 
 Para colocar imagens no Readme do Github, vocês podem usar o seguinte comando (abrir este Readme no modo raw ou como txt):
 
-![Imagem](https://github.com/hackoonspace/Hackoonspace-template/blob/master/exemplo.png)
+![imagem](https://github.com/hackoonspace/Hackoonspace-template/blob/master/exemplo.png)
 
 É preferível que vocês usem imagens hospedadas no próprio GitHub do projeto. É só referenciar o link delas no comando acima.
