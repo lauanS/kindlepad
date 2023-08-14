@@ -1,12 +1,4 @@
-Este Readme é um modelo que pode ser usado para os repositórios no GitHub de projetos feitos para a atividade de Extensão Hackerspace, da Universidade Federal de São Carlos - Campus Sorocaba, organizada pelo hackerspace [HackoonSpace](https://hackoonspace.com/). É importante observar que alguns campos e informações são opcionais, e que não é necessário seguir rigorosametne o modelo proposto. O objetivo é que, obrigatóriamente, os grupos coloquem em seus repositórios as informações requisitadas aqui, porém o formato em si pode ou não seguir o modelo.
-
-Além disso, para cada tópico, existem alguns possíveis exemplos de como o grupo pode apresentar as informações sobre o projeto (ex: lista enumerada, texto descritivo, etc). Alguns tópicos possuem comandos que só podem ser melhor visualizados na versão Raw ou txt do Readme.
-
-É preferível que a linguagem da documentação esteja em português, mas também é aceito que esteja em inglês.
-
-Para responder quaisquer dúvidas, entrar em contato com a equipe do HackoonSpace.
-
-# Extração e Concatenação de Mangás do MangaLivre.net para Leitura Offline
+# Kindlepad
 
 ## Conceito do projeto
 
@@ -137,13 +129,8 @@ O projeto possui uma limitação de que alguns mangás do site, não possuem mes
 
 ## Autores
 Lauan dos Santos Souza ([lauanS](https://github.com/lauanS))
+
 Maria Anita de Moura ([A-nita](https://github.com/A-nita))
 
 ## Imagens/screenshots
-É necessário colocar pelo menos 3 imagens/screenshots do projeto, porém fiquem a vontade para colocar mais, a medida do que vocês acharem legal para ilustrar o projeto.
 
-Para colocar imagens no Readme do Github, vocês podem usar o seguinte comando (abrir este Readme no modo raw ou como txt):
-
-![imagem](https://github.com/hackoonspace/Hackoonspace-template/blob/master/exemplo.png)
-
-É preferível que vocês usem imagens hospedadas no próprio GitHub do projeto. É só referenciar o link delas no comando acima.
