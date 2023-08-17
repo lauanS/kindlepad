@@ -5,18 +5,30 @@
 Este projeto tem como objetivo permitir que os leitores acessem e leiam mangás do site MangaLivre.net de forma offline. O MangaLivre.net é uma plataforma online que oferece mangás com anúncios aos leitores. A proposta é extrair as imagens dos mangás, baixá-las e reuní-las em um único arquivo, facilitando a leitura em aplicativos dedicados à leitura de quadrinhos mesmo sem conexão com a internet.
 
 ### Funcionamento:
+
 O projeto consiste em um sistema que realiza as seguintes etapas:
+
 * Acesso ao mangalivre.net: O sistema acessa o site MangaLivre.net para obter os mangás disponíveis para leitura online.
+
 * Extração de imagens: A partir dos mangás selecionados, o sistema extrai as imagens dos capítulos, garantindo que todo o conteúdo visual seja capturado com fidelidade.
+
 * Download das imagens: Após a extração, as imagens são baixadas para o computador do usuário, tornando-as acessíveis mesmo em ambientes sem conexão à internet.
+
 * Concatenação em um único arquivo: Todas as imagens baixadas são agrupadas em um único arquivo, seguindo a ordem original do mangá. Dessa forma, o usuário pode ler o mangá de forma contínua, sem interrupções.
+
 ### Benefícios:
 Este projeto traz diversos benefícios para os entusiastas de mangás:
+
 * Leitura offline: Permite a leitura de mangás mesmo em locais sem acesso à internet, tornando-se uma solução ideal para viagens ou locais remotos.
+
 * Organização: Os mangás são ~~concatenados~~ em um único arquivo, facilitando a organização e evitando a necessidade de lidar com múltiplos arquivos para cada capítulo.
+
 * Acessibilidade: Usuários que não possuem conexão à internet podem desfrutar de seus mangás favoritos sem restrições.
+
 * Economia de dados: Uma vez que o mangá é baixado, não é mais necessário utilizar dados móveis ou conexão Wi-Fi para a leitura.
+
 ### Conclusão:
+
 Em suma, esse projeto é uma solução prática e útil para leitores de mangás que buscam maior flexibilidade e comodidade em sua experiência de leitura.
 
   
@@ -25,8 +37,11 @@ Em suma, esse projeto é uma solução prática e útil para leitores de mangás
 Para o desenvolvimento do projeto foi utilzado Node.js com as seguintes bibliotecas:
 
 * puppeeteer: Foi utilizado para conectar com um browser chromium e simular a interação do usuário com o browser
+
 * axios: Foi utilizado para o  fazer requisições http para o browser
+
 * archiver: Foi utilizado para concatenas as várias imagens de um mangá em um único arquivo compactado
+
 * fs: Foi utilizado para manejar os arquivos dentro o sistema de diretórios do usuário
 
 Também foi utilizado Regex para acesso a imagens tags e links dentro do site
@@ -38,9 +53,13 @@ Para a implementação do projeto, primeiro é necessário entender o funcioname
 É possível resumir as tarefas necessárias para ler um mangá em alguns passos: Acessar a plataforma e escolher um título; Selecionar o mangá e ser direcionado a página com a lista dos capitulos; Escolher algum capítulo para leitura; Navegar entre as páginas do capítulo até o final, onde há um link para o próximo.
 
 Assim para o desenvolvimento do código podemos abstrair alguns passos como:
+
 * Fazer a requisição HTTP para o site
+
 * Extrair do html do site os links para cada capítulo
+
 * Extrair do html do site as imagens do mangá
+
 * Extrair do html do site o link para a próxima página do capítulo
 
 * Dentro de cada capítulo de mangá, a diferenciação da uma página para outra se dá pelo link, como por exemplo:
@@ -83,6 +102,7 @@ Com isso o projeto estará instaldo e pronto para ser executado.
 ## Execução
 
 Para rodar o projeto, basta executar o comando:
+
 ```
 npm run test
 ```
@@ -125,9 +145,11 @@ Uma [lista completa das dependências](https://github.com/puppeteer/puppeteer/bl
 
 
 ## Bugs/problemas conhecidos
+
 O projeto possui uma limitação de que alguns mangás do site, não possuem mesma padronização de nome, e portanto, o regex implementado para obter as imagens e links do sites, pode não funcionar para determinado título, além disso, caso haja alguma atualização no site mangalivre, é possível que o projeto para de funcionar pois não está configurado para essa novas configurações do site.
 
 ## Autores
+
 Lauan dos Santos Souza ([lauanS](https://github.com/lauanS))
 
 Maria Anita de Moura ([A-nita](https://github.com/A-nita))
