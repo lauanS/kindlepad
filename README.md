@@ -4,7 +4,7 @@
 
 Este projeto tem como objetivo permitir que os leitores acessem e leiam artigos, livros, mangás, entre outros, de forma offline, a partir da extração dessas histórias de diferentes origens.
 
-Para isso ele foi projetado para funcionar com módulos, onde cada módulo terás as funcionalidades necessárias para extração do conteúdo.
+Para isso ele foi projetado para funcionar com módulos, onde cada módulo terá as funcionalidades necessárias para extração do conteúdo.
 
 Nesse repositório se encontra disponível para demonstração o módulo do MangaLivre.net, uma plataforma online que oferece mangás com anúncios aos leitores. A proposta é extrair as imagens dos mangás, baixá-las e reuni-las em um único arquivo, facilitando a leitura em aplicativos dedicados à leitura de quadrinhos mesmo sem conexão com a internet.
 
@@ -169,3 +169,6 @@ Maria Anita de Moura ([A-nita](https://github.com/A-nita))
 
 ## Imagens/screenshots
 
+Leitura de um mangá pelo leitor Cover
+
+![manga-reader](./images/manga-reader.png)
