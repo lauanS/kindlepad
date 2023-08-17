@@ -2,7 +2,11 @@
 
 ## Conceito do projeto
 
-Este projeto tem como objetivo permitir que os leitores acessem e leiam mangás do site MangaLivre.net de forma offline. O MangaLivre.net é uma plataforma online que oferece mangás com anúncios aos leitores. A proposta é extrair as imagens dos mangás, baixá-las e reuní-las em um único arquivo, facilitando a leitura em aplicativos dedicados à leitura de quadrinhos mesmo sem conexão com a internet.
+Este projeto tem como objetivo permitir que os leitores acessem e leiam artigos, livros, mangás, entre outros, de forma offline, a partir da extração dessas histórias de diferentes origens.
+
+Para isso ele foi projetado para funcionar com módulos, onde cada módulo terás as funcionalidades necessárias para extração do conteúdo.
+
+Nesse repositório se encontra disponível para demonstração o módulo do MangaLivre.net, uma plataforma online que oferece mangás com anúncios aos leitores. A proposta é extrair as imagens dos mangás, baixá-las e reuni-las em um único arquivo, facilitando a leitura em aplicativos dedicados à leitura de quadrinhos mesmo sem conexão com a internet.
 
 ### Funcionamento:
 
@@ -14,43 +18,44 @@ O projeto consiste em um sistema que realiza as seguintes etapas:
 
 * Download das imagens: Após a extração, as imagens são baixadas para o computador do usuário, tornando-as acessíveis mesmo em ambientes sem conexão à internet.
 
-* Concatenação em um único arquivo: Todas as imagens baixadas são agrupadas em um único arquivo, seguindo a ordem original do mangá. Dessa forma, o usuário pode ler o mangá de forma contínua, sem interrupções.
+* Geração de arquivos próprios para leitura: Todas as imagens baixadas são agrupadas em arquivos CBR (Comic Book Reader), separados por capítulo e seguindo a ordem original do mangá. Dessa forma, o usuário pode ler o mangá de forma contínua, sem interrupções.
 
 ### Benefícios:
-Este projeto traz diversos benefícios para os entusiastas de mangás:
 
-* Leitura offline: Permite a leitura de mangás mesmo em locais sem acesso à internet, tornando-se uma solução ideal para viagens ou locais remotos.
+Este projeto traz diversos benefícios para leitores que precisam acessar um conteúdo de forma offline, em especial os entusiastas de mangás, graças ao módulo disponibilizado, como:
 
-* Organização: Os mangás são ~~concatenados~~ em um único arquivo, facilitando a organização e evitando a necessidade de lidar com múltiplos arquivos para cada capítulo.
+* Leitura offline: Permite a leitura mesmo em locais sem acesso à internet, tornando-se uma solução ideal para viagens ou locais remotos.
+
+* Organização: As informações extraídas são agrupadas em um único arquivo, facilitando a organização e evitando a necessidade de ter que carregar partes de um capitulo dinamicamente.
 
 * Acessibilidade: Usuários que não possuem conexão à internet podem desfrutar de seus mangás favoritos sem restrições.
 
 * Economia de dados: Uma vez que o mangá é baixado, não é mais necessário utilizar dados móveis ou conexão Wi-Fi para a leitura.
 
+* Melhor experiência: O conteúdo gerado vem livre de anúncios e interrupções, além de possibilitar o compartilhamento e-readers.
+
 ### Conclusão:
 
-Em suma, esse projeto é uma solução prática e útil para leitores de mangás que buscam maior flexibilidade e comodidade em sua experiência de leitura.
-
+Em suma, esse projeto é uma solução prática e útil para leitores que buscam maior flexibilidade e comodidade em sua experiência de leitura.
   
 ## Pré-requisitos e recursos utilizados
 
-Para o desenvolvimento do projeto foi utilzado Node.js com as seguintes bibliotecas:
+Para o desenvolvimento do projeto foi utilizado Node.js com as seguintes bibliotecas:
 
-* puppeeteer: Foi utilizado para conectar com um browser chromium e simular a interação do usuário com o browser
+* puppeeteer: Utilizado para conectar com um browser chromium e simular a interação do usuário com o browser.
 
-* axios: Foi utilizado para o  fazer requisições http para o browser
+* axios: Utilizado para o  fazer requisições http.
 
-* archiver: Foi utilizado para concatenas as várias imagens de um mangá em um único arquivo compactado
+* archiver: Utilizado para agrupar os arquivos obtidos e gerar um único arquivo cbr.
 
-* fs: Foi utilizado para manejar os arquivos dentro o sistema de diretórios do usuário
-
-Também foi utilizado Regex para acesso a imagens tags e links dentro do site
+Além disso, foi utilizadas as bibliotecas e funções disponibilizadas pelo node para manipulação de arquivos e buscas por padrões com expressões regulares.
 
   
 ## Passo a passo
+
 Para a implementação do projeto, primeiro é necessário entender o funcionamento do site mangalivre.net:
 
-É possível resumir as tarefas necessárias para ler um mangá em alguns passos: Acessar a plataforma e escolher um título; Selecionar o mangá e ser direcionado a página com a lista dos capitulos; Escolher algum capítulo para leitura; Navegar entre as páginas do capítulo até o final, onde há um link para o próximo.
+É possível resumir as tarefas necessárias para ler um mangá em alguns passos: Acessar a plataforma e escolher um título; Selecionar o mangá e ser direcionado a página com a lista dos capítulos; Escolher algum capítulo para leitura; Navegar entre as páginas do capítulo até o final, onde há um link para o próximo.
 
 Assim para o desenvolvimento do código podemos abstrair alguns passos como:
 
@@ -82,7 +87,7 @@ Devido a tal problema, para acessarmos o link de cada capítulo, teríamos que a
 
 Finalizando, após a extração das imagens, foi necessário apenas colocar todas as páginas dentro de um diretório de forma ordenada e compactar a pasta.
 
-Dessa forma foram implementado o arquivo index.js na pasta src/modules/mangalivre, para fazer a extração das imagens do site e o arquivo index.js da pasta src/utils para fazer a compactação do arquivo.
+Dessa forma foram implementado o arquivo index.js na pasta `src/modules/mangalivre`, para fazer a extração das imagens do site e o arquivo index.js da pasta `src/utils` para fazer a compactação do arquivo.
 
 
 ## Instalação
@@ -97,11 +102,11 @@ Para rodar o projeto, é necessário:
   npm i
   ```
 
-Com isso o projeto estará instaldo e pronto para ser executado.
+Com isso o projeto estará instalado e pronto para ser executado.
 
 ## Execução
 
-Para rodar o projeto, basta executar o comando:
+Para rodar o projeto, baixando um título de demonstração, basta executar o comando:
 
 ```
 npm run test
@@ -114,6 +119,14 @@ Esse comando irá executar o módulo do Mangalivre.net para baixar um manga.
 Ele ficará disponível em `generated/mangalivre/spy-family`
 
 ![kindlepad-manga](./images/kindlepad-manga.png)
+
+Para baixar outro título, é necessário rodar rodar o comando abaixo atualizando os valores:
+
+```
+node index.js <URL_DO_MANGA> <NOME_DO_ARQUIVO_DE_SAIDA>
+// Exemplo:
+// node index.js https://mangalivre.net/manga/spy-x-family-colorida/13348 spy-x-family
+```
 
 ## Possíveis complicações no Linux
 
