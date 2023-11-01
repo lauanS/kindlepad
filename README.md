@@ -6,7 +6,9 @@ Este projeto tem como objetivo permitir que os leitores acessem e leiam artigos,
 
 Para isso ele foi projetado para funcionar com módulos, onde cada módulo terá as funcionalidades necessárias para extração do conteúdo.
 
-Nesse repositório se encontra disponível para demonstração o módulo do MangaLivre.net, uma plataforma online que oferece mangás com anúncios aos leitores. A proposta é extrair as imagens dos mangás, baixá-las e reuni-las em um único arquivo, facilitando a leitura em aplicativos dedicados à leitura de quadrinhos mesmo sem conexão com a internet.
+Nesse repositório se encontra disponível para demonstração o módulo do MangaLivre.net, uma plataforma online que oferecia mangás com anúncios aos leitores. A proposta é extrair as imagens dos mangás, baixá-las e reuni-las em um único arquivo, facilitando a leitura em aplicativos dedicados à leitura de quadrinhos mesmo sem conexão com a internet.
+
+Vale ressaltar que a plataforma MangaLivre.net saiu do ar em agosto de 2023, impossibilitando que seja realizado teste com o módulo disponibilizado.
 
 ### Funcionamento:
 
